@@ -1,0 +1,61 @@
+﻿@model List<MVCDatabaseConnectionApp.Models.Person>
+@{
+    ViewBag.Title = "PersonView";
+}
+
+<h2>PersonView</h2>
+<html>
+<head>
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+
+    <table id="customers">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td> @item.ID</td>
+                <td>@item.Name</td>
+                <td> @item.Email</td>
+                <td>@item.PhoneNumber</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>  
+    
+
