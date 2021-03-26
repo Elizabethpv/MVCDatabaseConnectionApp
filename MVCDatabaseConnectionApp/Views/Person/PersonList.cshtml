@@ -1,0 +1,27 @@
+﻿@model MVCDatabaseConnectionApp.Models.Person
+@{
+    ViewBag.Title = "PersonList";
+}
+
+<h2>PersonList</h2>
+
+
+
+<table >
+    <tr>
+        <td><label>ID</label></td>
+        <td><input type="text" name="txtID" value="@Model.ID" /></td>
+    </tr>
+    <tr>
+        <td><label>Name</label></td>
+        <td><input type="text" name="txtName" value="@Model.Name" /></td>
+    </tr>
+    <tr>
+        <td><label>Email</label></td>
+        <td><input type="text" name="txtEmail" value="@Model.Email" /></td>
+    </tr>
+    <tr>
+        <td><label>PhoneNumber</label></td>
+        <td><input type="text" name="txtPhoneNumber" value="@Model.PhoneNumber" /></td>
+    </tr>
+</table>
