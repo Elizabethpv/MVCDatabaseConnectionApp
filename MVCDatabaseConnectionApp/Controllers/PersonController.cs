@@ -12,15 +12,14 @@ namespace MVCDatabaseConnectionApp.Controllers
 {
     public class PersonController : Controller
     {
-        String connections = "Data Source=DESKTOP-NDM7TFA\\SQLEXPRESS;Initial Catalog=PersonManagementSystem;Integrated Security=True;";
+        //String connections = "Data Source=DESKTOP-NDM7TFA\\SQLEXPRESS;Initial Catalog=PersonManagementSystem;Integrated Security=True;";
         // GET: Person
         public ActionResult PersonView()
         {
             List<Person> persons = new List<Person>();
             Person p1 = new Person();
-            //string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
-            SqlConnection con = new SqlConnection(connections);
-            //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ToString());
+            string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
+            SqlConnection con = new SqlConnection(strcon);
             con.Open();
             //SqlCommand command = new SqlCommand("SelectPerson", con);
             String sql = @"select * from Person";
@@ -52,7 +51,8 @@ namespace MVCDatabaseConnectionApp.Controllers
         public ActionResult PersonList()
         {
             Person p1 = new Person();
-            SqlConnection con = new SqlConnection(connections);
+            string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
+            SqlConnection con = new SqlConnection(strcon);
 
             con.Open();
             SqlCommand cmd = new SqlCommand("PersonTopView", con);
